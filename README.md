@@ -4,7 +4,7 @@
 ## 🍝 Copypasta this
 ```
 sudo apt install -y git \
-   & git clone https://github.com/Koojav/fresh-unix-setup.git \ 
+   & git clone https://github.com/Koojav/fresh-unix-setup.git \
    & cd fresh_unix_setup \
    & chmod +x run_me.sh \
    & ./run_me.sh
