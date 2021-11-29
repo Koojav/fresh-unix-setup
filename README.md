@@ -18,6 +18,7 @@ Following shit has been configured for you:
 - [x] `PyCharm Community` : food ain't free
 - [x] `Docker` : stage IV cancer
 - [x] `Slack` `Discord` : snap packaged distractions
+- [x] `Chrome` : renders StackOverflow a bit nicer than curl
 
 ## 📌 Optional stuff
 

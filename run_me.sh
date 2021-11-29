@@ -22,6 +22,10 @@ cp .zshrc ~/.zshrc
 cp .antigenrc ~/.antigenrc
 cp .p10k.zsh ~/.p10k.zsh
 
+# Install Chrome browser
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo apt install ./google-chrome-stable_current_amd64.deb
+
 # Install Docker
 curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh get-docker.sh
