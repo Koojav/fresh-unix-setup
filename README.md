@@ -15,6 +15,7 @@ sudo apt install -y git \
 Following shit has been configured for you:
 - [x] `ZSH` `Antigen` `PowerLevel10k` : pretty colors
 - [x] `htop` `curl` `git` `pip3` : honestly the only that was missing from a bare OS
+- [x] `tldr` : man pages for human beings
 - [x] `PyCharm Community` : food ain't free
 - [x] `Docker` : stage IV cancer
 - [x] `Slack` `Discord` : snap packaged distractions
