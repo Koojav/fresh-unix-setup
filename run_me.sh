@@ -3,7 +3,10 @@
 # Install apt packages
 sudo apt update
 sudo apt upgrade
-sudo apt install -y python3-pip zsh htop git curl tldr
+sudo apt install -y python3-pip zsh htop git curl tldr build-essential libssl-dev
+
+# Install pyenv (virtual environments for Python)
+curl https://pyenv.run | bash
 
 # Set ZSH as default shell
 sudo usermod -s /usr/bin/zsh $(whoami)
