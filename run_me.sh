@@ -15,7 +15,7 @@ sudo snap install discord
 sudo snap connect discord:system-observe
 
 # Install Antigen (ZSH plugin manager)
-curl -L git.io/antigen > ~/.antigen.zsh
+curl -L git.io/antigen > ~/antigen.zsh
 
 # Copy configuration scripts
 cp .zshrc ~/.zshrc
