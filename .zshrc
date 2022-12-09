@@ -16,7 +16,13 @@ HISTSIZE=10000
 SAVEHIST=10000
 setopt appendhistory
 
-# Created by Koojav, stolen from JHNWSK
+# Make local binaries accessible from anywhere, for eg. Poetry
+export PATH="$HOME/.local/bin:$PATH"
+
+# Pyenv setup
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
