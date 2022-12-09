@@ -8,11 +8,8 @@ fi
 # This resource file assumes previous usage of: https://github.com/zsh-users/antigen
 
 # Load Antigen
-source ~/.antigen.zsh
+source ~/antigen.zsh
 antigen init ~/.antigenrc
-
-# Enable fzf (improved CTR-R)
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
