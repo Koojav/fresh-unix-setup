@@ -3,7 +3,7 @@
 # Install apt packages
 sudo apt update
 sudo apt upgrade
-sudo apt install -y python3-pip zsh htop git curl tldr build-essential libssl-dev
+sudo apt install -y python3-pip zsh htop git curl tldr build-essential libssl-dev snapd
 
 # Install pyenv (virtual environments for Python)
 curl https://pyenv.run | bash
@@ -12,7 +12,7 @@ curl https://pyenv.run | bash
 sudo usermod -s /usr/bin/zsh $(whoami)
 
 # Install snap packages
-sudo snap install pycharm-community --classic
+sudo snap install code --classic
 sudo snap install slack --classic
 sudo snap install discord
 sudo snap connect discord:system-observe
