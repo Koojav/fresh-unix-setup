@@ -4,10 +4,10 @@
 ## 🍝 Copypasta this
 ```
 sudo apt install -y git \
-   & git clone https://github.com/Koojav/fresh-unix-setup.git \
-   & cd fresh-unix-setup \
-   & chmod +x run_me.sh \
-   & ./run_me.sh
+   && git clone https://github.com/Koojav/fresh-unix-setup.git \
+   && cd fresh-unix-setup \
+   && chmod +x run_me.sh \
+   && ./run_me.sh
 ```
 
 ## 🎉 There you go!
