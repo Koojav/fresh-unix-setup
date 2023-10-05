@@ -9,6 +9,16 @@ sudo apt upgrade
 sudo apt install -y python3-pip zsh htop git curl tldr build-essential libssl-dev snapd
 
 echo "\n\n########################"
+echo "# Install GitHub CLI"
+echo "########################"
+
+curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
+  && sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg \
+  && echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
+  && sudo apt update \
+  && sudo apt install gh -y
+
+echo "\n\n########################"
 echo "# Install pyenv (virtual environments for Python)"
 echo "########################"
 
