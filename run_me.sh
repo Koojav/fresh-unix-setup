@@ -45,8 +45,10 @@ echo "########################"
 
 sudo snap install code --classic
 sudo snap install slack --classic
-sudo snap install discord
-sudo snap connect discord:system-observe
+
+# Discord is having issues lately, leaving for posterity but webclient is to be used from now on
+# sudo snap install discord
+# sudo snap connect discord:system-observe
 
 echo "\n\n########################"
 echo "# Install Chrome browser"
