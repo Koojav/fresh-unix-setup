@@ -61,7 +61,8 @@ echo "\n\n########################"
 echo "# Install Docker"
 echo "########################"
 
-sudo apt install docker.io
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
 
 echo "\n\n########################"
 echo "EXECUTE THIS COMMAND AFTER REBOOT:"
