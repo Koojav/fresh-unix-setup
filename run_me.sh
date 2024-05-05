@@ -45,7 +45,6 @@ echo "########################"
 
 sudo snap install code --classic
 sudo snap install slack --classic
-sudo snap install docker 
 
 # Discord is having issues lately, leaving for posterity but webclient is to be used from now on
 # sudo snap install discord
@@ -56,7 +55,14 @@ echo "# Install Chrome browser"
 echo "########################"
 
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-sudo apt install ./google-chrome-stable_current_amd64.deb
+sudo apt install ./google-chrome-stable_current_amd64.debecho 
+
+"\n\n########################"
+echo "# Install Docker"
+echo "########################"
+
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
 
 echo "\n\n########################"
 echo "EXECUTE THIS COMMAND AFTER REBOOT:"
