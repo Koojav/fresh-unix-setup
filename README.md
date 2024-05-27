@@ -1,4 +1,4 @@
-#### Setup a brand new Unix with your favourite tools and colors
+ #### Setup a brand new Unix with your favourite tools and colors
 
 
 ## 🍝 Copypasta this
@@ -13,15 +13,17 @@ sudo apt install -y git \
 ## 🎉 There you go!
 
 Following shit has been configured for you:
-- [x] `ZSH` `Antigen` `PowerLevel10k` : pretty colors
-- [x] `htop` `curl` `git` `pip3` : honestly the only that was missing from a bare OS
+- [x] `GRUB2 Theme` : the dual boot she told you not to worry about
+- [x] `ZSH` `Antigen` : working search under CTR-R and various code completions in console
+- [x] `Starship` `Gogh` : pretty prompt pretty colors 
+- [x] `htop` `curl` `git` `pyenv` : the only things that were really missing from a bare OS
 - [x] `tldr` : man pages for human beings
 - [x] `gh` : create Pull Requests like 90s hackers
 - [x] `Visual Studio Code` : food ain't free
 - [x] `Docker` : stage IV cancer
-- [x] `Slack` `Discord` : snap packaged distractions
+- [x] `Slack` : context switcher 3000
 - [x] `Chrome` : renders StackOverflow a bit nicer than curl
 
 ## 📌 Optional stuff
-
-- [ ] Command `p10k configure` : fiddle with `PowerLevell0k` appeareance
+- [ ] Visit https://starship.rs/config/ : Starship config manual
+- [ ] Visit https://gogh-co.github.io/Gogh/ : Gogh color themes list 

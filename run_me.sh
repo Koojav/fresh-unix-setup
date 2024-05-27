@@ -1,48 +1,54 @@
 #!/bin/bash
 
-echo "########################"
-echo "# Install apt packages"
-echo "########################"
+section() {
+  echo ""
+  echo ""
+  echo "┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+  echo "┃ $1"
+  echo "┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"  
+  echo ""
+  echo ""
+}
 
+# section "Gogh - Tomorrow Night theme"
+# echo "252" | bash -c "$(wget -qO- https://git.io/vQgMr)"
+
+section "Prettify GRUB"
+git clone https://github.com/vinceliuice/grub2-themes.git    
+sudo ./grub2-themes/install.sh -s 2k
+    
+section "Install apt packages"
 sudo apt update
 sudo apt upgrade
-sudo apt install -y python3-pip zsh htop git curl tldr build-essential libssl-dev snapd
+sudo apt install python3-pip zsh htop git curl tldr build-essential libssl-dev snapd -y 
 
-echo "\n\n########################"
-echo "# Install GitHub CLI"
-echo "########################"
-
+section "Install GitHub CLI"
 curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
   && sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg \
   && echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
   && sudo apt update \
-  && sudo apt install gh -y
+  && sudo apt install gh -y 
 
-echo "\n\n########################"
-echo "# Install pyenv (virtual environments for Python)"
-echo "########################"
-
+section "Install pyenv (virtual environments for Python)"
 curl https://pyenv.run | bash
 
-echo "\n\n########################"
-echo "# Configure ZSH as default shell with Antigen plugin manager and fonts required for PowerLevel10k"
-echo "########################"
-
-wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf -P ~/.local/share/fonts
-wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf -P ~/.local/share/fonts
-wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf -P ~/.local/share/fonts
-wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf -P ~/.local/share/fonts
-
+section "Set ZSH as default shell with Antigen plugin manager"
 sudo usermod -s /usr/bin/zsh $(whoami)
 curl -L git.io/antigen > ~/antigen.zsh
-cp .zshrc ~/.zshrc
-cp .antigenrc ~/.antigenrc
-cp .p10k.zsh ~/.p10k.zsh
+cp .config/.zshrc ~/.zshrc
+cp .config/.antigenrc ~/.antigenrc
 
-echo "\n\n########################"
-echo "# Install Snap packages"
-echo "########################"
+section "Install Starship and copy config file based on Gruvbox-Rainbow theme"
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/FiraCode.zip
+unzip FiraCode.zip -d FiraCode
+sudo mkdir -p /usr/share/fonts/truetype/fira-code-nerd
+sudo cp FiraCode/* /usr/share/fonts/truetype/fira-code-nerd/
+sudo fc-cache -fv
+curl -sS https://starship.rs/install.sh | sh -s -- -y
+cp .config/starship.toml ~/.config/starship.toml
+sudo chsh -s $(which zsh)
 
+section "Install Snap packages"
 sudo snap install code --classic
 sudo snap install slack --classic
 
@@ -50,17 +56,11 @@ sudo snap install slack --classic
 # sudo snap install discord
 # sudo snap connect discord:system-observe
 
-echo "\n\n########################"
-echo "# Install Chrome browser"
-echo "########################"
-
+section "Install Chrome browser"
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-sudo apt install ./google-chrome-stable_current_amd64.debecho 
+sudo apt install ./google-chrome-stable_current_amd64.deb
 
-"\n\n########################"
-echo "# Install Docker"
-echo "########################"
-
+section "Install Docker"
 curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh get-docker.sh
 
