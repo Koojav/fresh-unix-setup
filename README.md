@@ -9,6 +9,7 @@ sudo apt install -y git \
    && chmod +x run_me.sh \
    && ./run_me.sh
 ```
+## 🔄 Restart 
 
 ## 🎉 There you go!
 
