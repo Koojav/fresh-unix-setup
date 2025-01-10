@@ -48,13 +48,20 @@ curl -sS https://starship.rs/install.sh | sh -s -- -y
 cp .config/starship.toml ~/.config/starship.toml
 sudo chsh -s $(which zsh)
 
-section "Install Snap packages"
-sudo snap install code --classic
-sudo snap install slack --classic
-
+section "Install Snap packages: Messaging"
 # Discord is having issues lately, leaving for posterity but webclient is to be used from now on
 # sudo snap install discord
 # sudo snap connect discord:system-observe
+sudo snap install slack --classic
+
+section "Install Snap packages: Code development tools"
+sudo snap install code --classic
+
+section "Install Snap packages: DevOps tools"
+sudo snap install terraform --classic
+sudo snap install aws-cli --classic
+sudo snap install kubectl --classic
+sudo snap install helm --classic
 
 section "Install Chrome browser"
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
