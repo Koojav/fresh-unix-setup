@@ -2,7 +2,6 @@
 
 format = """
 [](color_orange)\
-$os\
 $username\
 [](bg:color_yellow fg:color_orange)\
 $directory\
@@ -22,9 +21,12 @@ $python\
 [](fg:color_blue bg:color_bg3)\
 $docker_context\
 $conda\
+$aws\
 [](fg:color_bg3 bg:color_bg1)\
-$time\
+$kubernetes\
 [ ](fg:color_bg1)\
+$fill\
+$time\
 $line_break$character"""
 
 palette = 'gruvbox_dark'
@@ -40,31 +42,6 @@ color_orange = '#d65d0e'
 color_purple = '#b16286'
 color_red = '#cc241d'
 color_yellow = '#d79921'
-
-[os]
-disabled = false
-style = "bg:color_orange fg:color_fg0"
-
-[os.symbols]
-Windows = "󰍲"
-Ubuntu = "󰕈"
-SUSE = ""
-Raspbian = "󰐿"
-Mint = "󰣭"
-Macos = "󰀵"
-Manjaro = ""
-Linux = "󰌽"
-Gentoo = "󰣨"
-Fedora = "󰣛"
-Alpine = ""
-Amazon = ""
-Android = ""
-Arch = "󰣇"
-Artix = "󰣇"
-CentOS = ""
-Debian = "󰣚"
-Redhat = "󱄛"
-RedHatEnterprise = "󱄛"
 
 [username]
 show_always = true
@@ -100,7 +77,7 @@ style = "bg:color_blue"
 format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
 
 [c]
-symbol = " "
+symbol = ""
 style = "bg:color_blue"
 format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
 
@@ -148,11 +125,38 @@ format = '[[ $symbol( $context) ](fg:#83a598 bg:color_bg3)]($style)'
 style = "bg:color_bg3"
 format = '[[ $symbol( $environment) ](fg:#83a598 bg:color_bg3)]($style)'
 
+[aws]
+style = "bg:color_bg3"
+format = '[[( $symbol $profile )](fg:#83a598 bg:color_bg3)]($style)'
+symbol = ''
+
+[kubernetes]
+disabled = false
+detect_files = ['Chart.yaml', 'main.tf']
+detect_folders = ['terraform']
+style = "bg:color_bg3"
+format = '[[( $symbol $context ($namespace))](fg:color_fg0 bg:color_bg1)]($style)'
+symbol = '󰠳'
+
+[[kubernetes.contexts]]
+# Using capture groups
+# Contexts from GKE, AWS and other cloud providers usually carry additional information, like the region/zone.
+# The following entry matches on the GKE format (`gke_projectname_zone_cluster-name`)
+# and renames every matching kube context into a more readable format (`gke-cluster-name`):
+# context_pattern = "gke_.*_(?P<cluster>[\\w-]+)"
+context_pattern = "arn:.*/(?P<cluster>[\\w-]+)"
+context_alias = "$cluster"
+
 [time]
 disabled = false
 time_format = "%R"
 style = "bg:color_bg1"
-format = '[[  $time ](fg:color_fg0 bg:color_bg1)]($style)'
+format = '[[ $time](fg:color_fg0)]($style)'
+
+[fill]
+style = 'green'
+symbol = " "
+disabled = false
 
 [line_break]
 disabled = false
