@@ -14,20 +14,20 @@ section() {
 # echo "252" | bash -c "$(wget -qO- https://git.io/vQgMr)"
 
 section "Prettify GRUB"
-git clone https://github.com/vinceliuice/grub2-themes.git    
+git clone https://github.com/vinceliuice/grub2-themes.git
 sudo ./grub2-themes/install.sh -s 2k
-    
+
 section "Install apt packages"
 sudo apt update
 sudo apt upgrade
-sudo apt install python3-pip zsh htop git curl tldr build-essential libssl-dev snapd -y 
+sudo apt install python3-pip zsh htop git curl tldr build-essential libssl-dev snapd -y
 
 section "Install GitHub CLI"
 curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
   && sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg \
   && echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
   && sudo apt update \
-  && sudo apt install gh -y 
+  && sudo apt install gh -y
 
 section "Install pyenv (virtual environments for Python)"
 curl https://pyenv.run | bash
@@ -60,8 +60,10 @@ sudo snap install code --classic
 section "Install Snap packages: DevOps tools"
 sudo snap install terraform --classic
 sudo snap install aws-cli --classic
-sudo snap install kubectl --classic
-sudo snap install helm --classic
+
+# Removed from core services for now:
+# sudo snap install kubectl --classic
+# sudo snap install helm --classic
 
 section "Install Chrome browser"
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb

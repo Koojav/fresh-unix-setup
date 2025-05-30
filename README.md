@@ -29,7 +29,7 @@ Following shit has been configured for you:
 - [x] `gh` : create Pull Requests like 90s hackers
 - [x] `Visual Studio Code` : food ain't free
 - [x] `Docker` : stage IV cancer
-- [x] `aws-cli`, `kubectl`, `terraform`, `helm`: aaand all the nodes are gone
+- [x] `aws-cli` `terraform`: aaand all the nodes are gone
 - [x] `Slack` : context switcher 3000
 - [x] `Chrome` : renders StackOverflow a bit nicer than curl
 
