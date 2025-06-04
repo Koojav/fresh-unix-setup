@@ -20,7 +20,8 @@ sudo ./grub2-themes/install.sh -s 2k
 section "Install apt packages"
 sudo apt update
 sudo apt upgrade
-sudo apt install python3-pip zsh htop git curl tldr build-essential libssl-dev snapd -y
+sudo apt install build-essential libssl-dev zlib1g-dev libncurses5-dev libncursesw5-dev libreadline-dev libsqlite3-dev libffi-dev liblzma-dev tk-dev uuid-dev \
+    python3-pip zsh htop git curl tldr snapd -y
 
 section "Install GitHub CLI"
 curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
